@@ -1,0 +1,88 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+$primary-bg: #cca5b2;
+$light: #ffffff;
+$secondary-bg: #00006b;
+
+$font-main: Akkurat, Arial, sans-serif;
+
+:root {
+    --grid-dims: 1/-1;
+}
+
+@mixin gridSetup($divisions: 12, $value: 1fr) {
+    display: grid;
+    grid-template-columns: repeat($divisions, $value);
+}
+
+@mixin set-as-bg($top: 0, $left: 0, $zindex: -2) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    z-index: $zindex;
+}
+
+@mixin set-bg-img($url, $pos: center, $reps: no-repeat, $size: cover) {
+    background-image: url($url);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+%buttons-def {
+    border: none;
+    border-radius: 5px;
+}
+%buttons-style-1 {
+    background-color: $light;
+    color: $secondary-bg;
+}
+
+body {
+    font-family: $font-main;
+}
+
+header {
+    background-color: $light;
+    nav {
+        @include gridSetup(12);
+        ul {
+            grid-column: var(--grid-dims);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            li {
+                list-style: none;
+                img {
+                    width: 150px;
+                }
+                i {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+section {
+    @include gridSetup(10);
+    @include set-bg-img("../assets/triodoshippo_heroImageFullWidthMobile.jfif");
+    grid-template-rows: repeat(7, 1fr);
+    height: 133vw;
+    button {
+        grid-area: 6/4/7/7;
+    }
+}
+
+button.general {
+    @extend %buttons-def;
+    @extend %buttons-style-1;
+
+    height: 80%;
+    align-self: end;
+}
