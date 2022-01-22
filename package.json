@@ -1,0 +1,20 @@
+{
+  "name": "triodos-clone",
+  "version": "1.0.0",
+  "description": "My attempt to clone the website of Triodos banking at https://www.triodos.nl/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cometbroom/TRIODOS-clone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cometbroom/TRIODOS-clone/issues"
+  },
+  "homepage": "https://github.com/cometbroom/TRIODOS-clone#readme"
+}
