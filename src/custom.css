@@ -20,6 +20,7 @@ button.general {
 
 body {
   font-family: Akkurat, Arial, sans-serif;
+  color: #212529;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 }
@@ -103,10 +104,58 @@ section.links ul .fas {
 section.links ul .fa-circle {
   margin-left: 1rem;
 }
+section.collapsible {
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px;
+}
+section.collapsible i {
+  grid-column: 5/-5;
+  text-align: center;
+  padding: 10px 0px;
+  margin: 0px 15px;
+}
+section.collapsible h4 {
+  grid-column: 2/-2;
+  text-align: center;
+}
+section.collapsible div.collapsible-text {
+  background-color: white;
+  grid-column: 1/-1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+section.collapsible div.collapsible-text p {
+  color: #00006b;
+  line-height: 1.3;
+}
+section.collapsible div.collapsible-text button {
+  border: 1px solid gray;
+  padding: 15px;
+  align-self: flex-start;
+}
 
 button.general {
   height: 80%;
   align-self: end;
+}
+
+ul.links-1 {
+  list-style: none;
+}
+ul.links-1 li {
+  padding: 10px 0px;
+  display: flex;
+}
+ul.links-1 li i {
+  align-self: flex-start;
+  padding: 5px 0px;
+}
+ul.links-1 i {
+  border: none;
+  font-size: 0.8em;
 }
 
 /*# sourceMappingURL=custom.css.map */

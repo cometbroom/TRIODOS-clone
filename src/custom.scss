@@ -37,6 +37,11 @@ $padding-section: 40px 0px;
     background-size: cover;
 }
 
+@mixin set-border-circle($width: 1px, $color: black, $style: solid) {
+    border: $width $color $style;
+    border-radius: 50%;
+}
+
 %buttons-def {
     border: none;
     border-radius: 5px;
@@ -48,6 +53,7 @@ $padding-section: 40px 0px;
 
 body {
     font-family: $font-main;
+    color: #212529;
     @include gridSetup(12);
 }
 
@@ -126,6 +132,38 @@ section {
             }
         }
     }
+    &.collapsible {
+        justify-content: center;
+        align-items: center;
+        padding: $padding-section;
+        i {
+            grid-column: 5/-5;
+            text-align: center;
+            padding: 10px 0px;
+            margin: 0px 15px;
+        }
+        h4 {
+            grid-column: 2/-2;
+            text-align: center;
+        }
+        div.collapsible-text {
+            background-color: white;
+            grid-column: 1/-1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            p {
+                color: $secondary-bg;
+                line-height: 1.3;
+            }
+            button {
+                border: 1px solid gray;
+                padding: 15px;
+                align-self: flex-start;
+            }
+        }
+    }
 }
 
 button.general {
@@ -134,4 +172,23 @@ button.general {
 
     height: 80%;
     align-self: end;
+}
+
+ul.links-1 {
+    list-style: none;
+    li {
+        padding: 10px 0px;
+        display: flex;
+        i {
+            align-self: flex-start;
+            padding: 5px 0px;
+        }
+    }
+    & i {
+        border: none;
+        font-size: 0.8em;
+    }
+}
+
+ul.links-1 li::before {
 }
