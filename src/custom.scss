@@ -141,6 +141,7 @@ section {
             text-align: center;
             padding: 10px 0px;
             margin: 0px 15px;
+            cursor: pointer;
         }
         h4 {
             grid-column: 2/-2;
@@ -149,7 +150,11 @@ section {
         div.collapsible-text {
             background-color: white;
             grid-column: 1/-1;
-            padding: 20px;
+            padding: 0px 20px;
+            margin: 20px 0px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s;
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -190,5 +195,13 @@ ul.links-1 {
     }
 }
 
-ul.links-1 li::before {
+.gate-end {
+    height: 20px;
+    grid-column: 1/-1;
+    background-color: $tertiary-bg;
+}
+
+.collapsible-active {
+    transform: rotate(45deg);
+    transition: transform 0.3s;
 }

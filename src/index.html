@@ -53,7 +53,7 @@
         </ul>
     </section>
     <section class="collapsible">
-        <i class="fas fa-plus"></i>
+        <i class="fas fa-plus collapsible-tgl"></i>
         <h4>Let op: er zijn oplichters actief</h4>
         <div class="collapsible-text">
             <h3>Spoofing</h3>
@@ -108,7 +108,27 @@
                 </li>
             </ul>
         </div>
+        <div class="gate-end"></div>
     </section>
+    <script type="text/javascript">
+        var coll = document.getElementsByClassName("collapsible-tgl");
+        var i;
+        console.log(coll);
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                this.classList.add("collapsible-active")
+                var content = this.nextElementSibling.nextElementSibling;
+                if (content.style.maxHeight) {
+                    this.classList.remove("collapsible-active");
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
