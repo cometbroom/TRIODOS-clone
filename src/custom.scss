@@ -44,9 +44,11 @@ $font-main: Akkurat, Arial, sans-serif;
 
 body {
     font-family: $font-main;
+    @include gridSetup(12);
 }
 
 header {
+    grid-column: 1/-1;
     background-color: $light;
     nav {
         @include gridSetup(12);
@@ -70,12 +72,24 @@ header {
 }
 
 section {
+    grid-column: 1/-1;
     @include gridSetup(10);
-    @include set-bg-img("../assets/triodoshippo_heroImageFullWidthMobile.jfif");
-    grid-template-rows: repeat(7, 1fr);
-    height: 133vw;
-    button {
+    & button {
         grid-area: 6/4/7/7;
+    }
+    &.landing {
+        grid-template-rows: repeat(7, 1fr);
+        height: 133vw;
+        @include set-bg-img(
+            "../assets/triodoshippo_heroImageFullWidthMobile.jfif"
+        );
+    }
+    &.info {
+        & aside {
+            grid-column: 2/-2;
+            padding: 40px 0px;
+            color: $secondary-bg;
+        }
     }
 }
 
