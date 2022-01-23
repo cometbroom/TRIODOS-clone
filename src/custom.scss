@@ -7,8 +7,12 @@
 $primary-bg: #cca5b2;
 $light: #ffffff;
 $secondary-bg: #00006b;
+$tertiary-bg: #e6f2f5;
 
 $font-main: Akkurat, Arial, sans-serif;
+
+//spacing
+$padding-section: 40px 0px;
 
 :root {
     --grid-dims: 1/-1;
@@ -85,10 +89,41 @@ section {
         );
     }
     &.info {
+        color: $secondary-bg;
         & aside {
             grid-column: 2/-2;
-            padding: 40px 0px;
-            color: $secondary-bg;
+            padding: $padding-section;
+        }
+    }
+    &.links {
+        color: $secondary-bg;
+        background-color: $tertiary-bg;
+        padding: $padding-section;
+        :nth-child(n) {
+            grid-column: 2/-2;
+        }
+        h4 {
+            grid-column: 2/-2;
+        }
+        ul {
+            list-style: none;
+            padding-bottom: 20px;
+            a {
+                text-decoration: none;
+                color: $secondary-bg;
+            }
+            li {
+                padding: 5px 0px;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+            .fas {
+                font-size: 9px;
+            }
+            .fa-circle {
+                margin-left: 1rem;
+            }
         }
     }
 }

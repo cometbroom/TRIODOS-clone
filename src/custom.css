@@ -65,10 +65,43 @@ section.landing {
   background-repeat: no-repeat;
   background-size: cover;
 }
+section.info {
+  color: #00006b;
+}
 section.info aside {
   grid-column: 2/-2;
   padding: 40px 0px;
+}
+section.links {
   color: #00006b;
+  background-color: #e6f2f5;
+  padding: 40px 0px;
+}
+section.links :nth-child(n) {
+  grid-column: 2/-2;
+}
+section.links h4 {
+  grid-column: 2/-2;
+}
+section.links ul {
+  list-style: none;
+  padding-bottom: 20px;
+}
+section.links ul a {
+  text-decoration: none;
+  color: #00006b;
+}
+section.links ul li {
+  padding: 5px 0px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+section.links ul .fas {
+  font-size: 9px;
+}
+section.links ul .fa-circle {
+  margin-left: 1rem;
 }
 
 button.general {
