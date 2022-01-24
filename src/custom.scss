@@ -58,6 +58,8 @@ $padding-section: 40px 0px;
     }
 }
 @mixin place-oneaxis-force($position) {
+    position: absolute;
+
     @if $position == "right" {
         left: 100vw;
         transform: translateX(-100%);
@@ -66,17 +68,10 @@ $padding-section: 40px 0px;
         right: 100vw;
         transform: translateX(100%);
     }
-    @if $position == "top" {
-        bottom: 100vw;
-        transform: translateY(100%);
+    @if $position == "center" {
+        left: 50vw;
+        transform: translateX(-50%);
     }
-    @if $position == "bottom" {
-        top: 100vw;
-        transform: translateY(-100%);
-    }
-
-    left: 100vw;
-    transform: translateX(-100%);
 }
 
 %buttons-def {
@@ -149,7 +144,8 @@ ul.links-1 {
     background-image: linear-gradient(0deg, #0096ff, #006106);
 }
 
-section {
+section,
+body footer {
     grid-column: 1/-1;
     @include gridSetup(10);
     & button {
