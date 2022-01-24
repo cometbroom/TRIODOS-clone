@@ -50,6 +50,37 @@ header nav ul li i {
   font-size: 20px;
 }
 
+ul.links-1 {
+  list-style: none;
+}
+ul.links-1 li {
+  padding: 10px 0px;
+  display: flex;
+}
+ul.links-1 li i {
+  align-self: flex-start;
+  padding: 5px 0px;
+}
+ul.links-1 i {
+  border: none;
+  font-size: 0.8em;
+}
+
+.gate-end {
+  height: 20px;
+  grid-column: 1/-1;
+  background-color: #e6f2f5;
+}
+
+.collapsible-active {
+  transform: rotate(45deg);
+  transition: transform 0.3s;
+}
+
+.gradient {
+  background-image: linear-gradient(0deg, #0096ff, #006106);
+}
+
 section {
   grid-column: 1/-1;
   display: grid;
@@ -58,6 +89,7 @@ section {
 section button {
   grid-area: 6/4/7/7;
 }
+
 section.landing {
   grid-template-rows: repeat(7, 1fr);
   height: 133vw;
@@ -66,6 +98,7 @@ section.landing {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 section.info {
   color: #00006b;
 }
@@ -73,6 +106,7 @@ section.info aside {
   grid-column: 2/-2;
   padding: 40px 0px;
 }
+
 section.links {
   color: #00006b;
   background-color: #e6f2f5;
@@ -104,10 +138,12 @@ section.links ul .fas {
 section.links ul .fa-circle {
   margin-left: 1rem;
 }
+
 section.collapsible {
   justify-content: center;
   align-items: center;
   padding: 40px 0px;
+  padding-bottom: 0px;
 }
 section.collapsible i {
   grid-column: 5/-5;
@@ -142,36 +178,83 @@ section.collapsible div.collapsible-text button {
   align-self: flex-start;
 }
 
+section.album-sideswipe {
+  padding-top: 2rem;
+  height: 133vw;
+}
+section.album-sideswipe h2 {
+  grid-column: var(--grid-dims);
+  text-align: center;
+  color: white;
+}
+section.album-sideswipe .gradient {
+  grid-column: var(--grid-dims);
+  position: absolute;
+  height: 300px;
+  width: 100%;
+  z-index: -2;
+  margin-top: -2rem;
+}
+section.album-sideswipe .swipe-arrows {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  grid-column: 1/-1;
+  height: 133vw;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-size: 1.5rem;
+}
+section.album-sideswipe .swipe-arrows i {
+  background-color: rgba(0, 0, 107, 0.15);
+  padding: 20px;
+}
+section.album-sideswipe .swipe-arrows i:nth-child(2) {
+  position: absolute;
+  left: 100vw;
+  transform: translateX(-100%);
+  left: 100vw;
+  transform: translateX(-100%);
+}
+section.album-sideswipe ul {
+  grid-column: var(--grid-dims);
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 80%;
+  grid-template-columns: unset;
+  grid-template-rows: unset;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 30px 0px 0px 20px;
+  gap: 20px;
+}
+section.album-sideswipe ul li {
+  list-style: none;
+}
+section.album-sideswipe ul li img {
+  width: 100%;
+  border-radius: 15px;
+}
+section.album-sideswipe ul li .img-textfront {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+  top: -60%;
+  z-index: 2;
+  line-height: 1.4;
+  font-weight: 400;
+  padding: 10px;
+}
+section.album-sideswipe ul li .img-textfront h4 {
+  font-size: 1.1em;
+}
+
 button.general {
   height: 80%;
   align-self: end;
-}
-
-ul.links-1 {
-  list-style: none;
-}
-ul.links-1 li {
-  padding: 10px 0px;
-  display: flex;
-}
-ul.links-1 li i {
-  align-self: flex-start;
-  padding: 5px 0px;
-}
-ul.links-1 i {
-  border: none;
-  font-size: 0.8em;
-}
-
-.gate-end {
-  height: 20px;
-  grid-column: 1/-1;
-  background-color: #e6f2f5;
-}
-
-.collapsible-active {
-  transform: rotate(45deg);
-  transition: transform 0.3s;
 }
 
 /*# sourceMappingURL=custom.css.map */
