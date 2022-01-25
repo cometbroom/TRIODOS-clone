@@ -121,6 +121,11 @@ ul.links-1 {
     li {
         padding: 10px 0px;
         display: flex;
+        align-items: center;
+        gap: 10px;
+        a {
+            text-decoration: none;
+        }
         i {
             align-self: flex-start;
             padding: 5px 0px;
@@ -159,9 +164,27 @@ section.menu {
     grid-column: 2/-2;
     max-height: 0px;
     overflow: hidden;
-    transition: max-height 0.5s;
-    &.active {
-        background-color: $menu-bg-yellow;
+    background-color: $menu-bg-yellow;
+    transition: max-height 0.5s, padding 0.5s;
+    color: $secondary-bg;
+    gap: 20px;
+    input {
+        grid-column: 2/-2;
+        border-radius: 6px;
+        border: none;
+        padding: 10px;
+    }
+    ul {
+        grid-column: 2/-2;
+    }
+    .speciaal {
+        grid-column: 2/-2;
+        h4 {
+            padding-bottom: 5px;
+        }
+        li {
+            border-bottom: 1px gray solid;
+        }
     }
 }
 

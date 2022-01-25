@@ -23,7 +23,37 @@
                 <li>Inloggen</li>
             </ul>
         </nav>
-        <section class="menu">
+        <section id="menuSection" class="menu">
+            <input class="input-bar" type="text" />
+            <ul class="links-1">
+                <li><i class="fas fa-greater-than"></i><a href="">Service</a></li>
+                <li><i class="fas fa-greater-than"></i><a href="">Contact</a></li>
+                <li><i class="fas fa-greater-than"></i><a href="">Over</a></li>
+                <li><i class="fas fa-greater-than"></i><a href="">Over Triodos Bank</a></li>
+                <li><i class="fas fa-greater-than"></i><a href="">De Kleur van Geld</a></li>
+                <li><i class="fas fa-greater-than"></i><a href="">Veilig bankieren</a></li>
+            </ul>
+            <div class="speciaal">
+                <h4>Speciaal voor</h4>
+                <ul class="links-1">
+                    <li><i class="fas fa-greater-than"></i><a href="">Particulieren</a></li>
+                    <li><i class="fas fa-greater-than"></i><a href="">Private Banking</a></li>
+                    <li><i class="fas fa-greater-than"></i><a href="">ZZP'ers</a></li>
+                    <li><i class="fas fa-greater-than"></i><a href="">MKB'ers</a></li>
+                    <li><i class="fas fa-greater-than"></i><a href="">Non-profit</a></li>
+                    <li><i class="fas fa-greater-than"></i><a href="">Certificaathouders</a></li>
+                </ul>
+            </div>
+            <div class="speciaal">
+                <h4>Producten</h4>
+                <ul class="links-1">
+                    <li><i class="fas fa-greater-than"></i><a href="">Betalen</a></li>
+                    <li><i class="fas fa-greater-than"></i><a href="">Sparen</a></li>
+                    <li><i class="fas fa-greater-than"></i><a href="">Beleggen</a></li>
+                    <li><i class="fas fa-greater-than"></i><a href="">Hypotheken</a></li>
+                    <li><i class="fas fa-greater-than"></i><a href="">Zakelijk lenen</a></li>
+                </ul>
+            </div>
 
         </section>
     </header>
@@ -195,13 +225,19 @@
             });
         }
 
-        var menu = document.getElementById("menuBars");
+        var menubtn = document.getElementById("menuBars");
+        var content = document.getElementById("menuSection");
 
-        menu.addEventListener("click", function () {
-            if (menu.classList.contains("active")) {
-                menu.classList.remove("active");
+        menubtn.addEventListener("click", function () {
+
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                content.style.padding = null;
+                content.style.overflow = "hidden";
             } else {
-                menu.classList.add("active");
+                content.style.maxHeight = "100vh";
+                content.style.padding = "15px 0px";
+                content.style.overflow = "scroll";
             }
         })
     </script>
