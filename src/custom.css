@@ -128,10 +128,10 @@ section.menu .speciaal li {
 section.landing {
   grid-template-rows: repeat(7, 1fr);
   height: 133vw;
-  background-image: url("../assets/triodoshippo_heroImageFullWidthMobile.jfif");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-image: url("../assets/triodoshippo_heroImageFullWidthMobile.jfif");
 }
 
 section.info {
@@ -190,6 +190,7 @@ section.collapsible i {
 section.collapsible h4 {
   grid-column: 2/-2;
   text-align: center;
+  color: #00006b;
 }
 section.collapsible div.collapsible-text {
   background-color: white;
@@ -215,7 +216,8 @@ section.collapsible div.collapsible-text button {
 
 section.album-sideswipe {
   padding-top: 2rem;
-  height: 133vw;
+  grid-template-rows: repeat(2, fit-content(100%));
+  padding-bottom: 1rem;
 }
 section.album-sideswipe h2 {
   grid-column: var(--grid-dims);
@@ -265,18 +267,22 @@ section.album-sideswipe ul {
 }
 section.album-sideswipe ul li {
   list-style: none;
+  display: grid;
 }
 section.album-sideswipe ul li img {
+  grid-row: 1/2;
+  grid-column: 1/2;
   width: 100%;
   border-radius: 15px;
 }
 section.album-sideswipe ul li .img-textfront {
+  grid-row: 1/2;
+  grid-column: 1/2;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 10px;
   color: white;
-  top: -60%;
   z-index: 2;
   line-height: 1.4;
   font-weight: 400;
@@ -337,6 +343,184 @@ section.footer .links-1 li a {
 button.general {
   height: 80%;
   align-self: end;
+}
+
+@media screen and (min-width: 667px) and (max-width: 1439px) {
+  section.landing {
+    background-image: url("../assets/triodoshippo_heroImageFullWidthSmallDesktop.jfif");
+    height: 50vw;
+  }
+
+  section.album-sideswipe ul {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 40%;
+    grid-template-columns: unset;
+    grid-template-rows: unset;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  section.album-sideswipe .swipe-arrows {
+    height: 100%;
+  }
+
+  section.footer .select-country {
+    grid-column: 2/-6;
+  }
+  section.footer .social-media-follow {
+    grid-column: 2/-4;
+  }
+  section.footer .links-1 {
+    display: flex;
+    gap: 20px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439.98px) {
+  section.landing {
+    height: 40vw;
+  }
+
+  section.info aside {
+    grid-column: 3/-3;
+  }
+
+  section.links {
+    grid-template-rows: repeat(2, fit-content(100%));
+  }
+  section.links :nth-child(2) {
+    grid-column: 3/span 3;
+  }
+  section.links :nth-child(4) {
+    grid-column: 6/span 3;
+  }
+  section.links h4:nth-child(1) {
+    grid-row: 1/2;
+    grid-column: 3/span 3;
+  }
+  section.links h4:nth-child(3) {
+    grid-row: 1/2;
+    grid-column: 6/span 3;
+  }
+
+  section.collapsible i {
+    grid-column: 8/-3;
+    grid-row: 1/2;
+  }
+  section.collapsible h4 {
+    grid-column: 3/6;
+  }
+  section.collapsible div.collapsible-text {
+    grid-column: 3/-3;
+  }
+
+  section.album-sideswipe .swipe-arrows {
+    display: none;
+  }
+  section.album-sideswipe ul {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 30%;
+    grid-template-columns: unset;
+    grid-template-rows: unset;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  section.footer {
+    padding: 30px 30px;
+  }
+  section.footer .select-country,
+section.footer .social-media-follow {
+    grid-column: 1/span 3;
+  }
+
+  .links-1 {
+    grid-column: 6/-1 !important;
+  }
+}
+@media (min-width: 1440px) {
+  :root {
+    --grid-dims: 2/-2;
+  }
+
+  section.landing {
+    background-image: url("../assets/triodoshippo_heroImageFullWidthSmallDesktop.jfif");
+    height: 100vh;
+  }
+  section.landing button.general {
+    grid-column: 5/-5;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  section.info aside {
+    grid-column: 3/-3;
+  }
+
+  section.links {
+    grid-template-rows: repeat(2, fit-content(100%));
+  }
+  section.links :nth-child(2) {
+    grid-column: 3/span 3;
+  }
+  section.links :nth-child(4) {
+    grid-column: 6/span 3;
+  }
+  section.links h4:nth-child(1) {
+    grid-row: 1/2;
+    grid-column: 3/span 3;
+  }
+  section.links h4:nth-child(3) {
+    grid-row: 1/2;
+    grid-column: 6/span 3;
+  }
+  section.links ul li a {
+    border-bottom: 1px solid gray;
+  }
+
+  section.collapsible i {
+    grid-column: 7/span 2;
+    grid-row: 1/2;
+  }
+  section.collapsible h4 {
+    grid-column: 3/6;
+    font-size: 1.5em;
+  }
+  section.collapsible div.collapsible-text {
+    grid-column: 3/-3;
+  }
+  section.collapsible div.collapsible-text button {
+    font-size: 1.2em;
+  }
+
+  section.album-sideswipe .swipe-arrows {
+    display: none;
+  }
+  section.album-sideswipe ul {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 30%;
+    grid-template-columns: unset;
+    grid-template-rows: unset;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    grid-column: 2/-2;
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  section.footer {
+    padding: 30px 30px;
+  }
+  section.footer .select-country,
+section.footer .social-media-follow {
+    grid-column: 2/span 3;
+  }
+  section.footer .links-1 {
+    grid-column: 7/-1;
+    display: flex;
+    gap: 20px;
+  }
 }
 
 /*# sourceMappingURL=custom.css.map */
