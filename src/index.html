@@ -18,11 +18,14 @@
     <header>
         <nav>
             <ul>
-                <li><i class="fas fa-bars"></i></li>
+                <li id="menuBars"><i class="fas fa-bars"></i></li>
                 <li><img src="../assets/logo-triodos-bank.svg" alt="Logo of triodos bank"></li>
                 <li>Inloggen</li>
             </ul>
         </nav>
+        <section class="menu">
+
+        </section>
     </header>
     <section class="landing">
         <button class="general">
@@ -147,9 +150,32 @@
 
         </ul>
     </section>
-    <footer>
-        
-    </footer>
+    <section class="footer">
+        <select id="countrySelector" class="select-country" tabindex="0">
+            <option value="/">Nederland</option>
+            <option value="">België</option>
+            <option value="">Duitsland</option>
+            <option value="">Spanje</option>
+            <option value="">Groot-Brittannië</option>
+            <option value="">Corporate</option>
+            <option value="">Foundation</option>
+            <option value="">Investment Management</option>
+        </select>
+        <div class="social-media-follow">
+            <p>Volg on op</p>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-youtube"></i>
+        </div>
+
+        <ul class="links-1">
+            <li><i class="fas fa-greater-than"></i><a href="">Contact</a></li>
+            <li><i class="fas fa-greater-than"></i><a href="">Privacy & cookies</a></li>
+            <li><i class="fas fa-greater-than"></i><a href="">Nieuwebrief</a></li>
+        </ul>
+    </section>
     <script type="text/javascript">
         var coll = document.getElementsByClassName("collapsible-tgl");
         var i;
@@ -168,6 +194,16 @@
                 }
             });
         }
+
+        var menu = document.getElementById("menuBars");
+
+        menu.addEventListener("click", function () {
+            if (menu.classList.contains("active")) {
+                menu.classList.remove("active");
+            } else {
+                menu.classList.add("active");
+            }
+        })
     </script>
 </body>
 
