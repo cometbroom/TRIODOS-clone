@@ -4,7 +4,8 @@
   "description": "My attempt to clone the website of Triodos banking at https://www.triodos.nl/",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sass --watch src/custom.scss src/custom.css"
   },
   "repository": {
     "type": "git",
