@@ -397,6 +397,9 @@ button.general {
 }
 
 @media screen and (min-width: 667px) and (max-width: 1439px) {
+    :root {
+        --grid-dims: 2/-2;
+    }
     section.landing {
         background-image: url("../assets/triodoshippo_heroImageFullWidthSmallDesktop.jfif");
         height: 50vw;
@@ -423,6 +426,9 @@ button.general {
     }
 }
 @media screen and (min-width: 1024px) and (max-width: 1439.98px) {
+    :root {
+        --grid-dims: 2/-2;
+    }
     section.landing {
         height: 40vw;
     }
@@ -560,6 +566,14 @@ button.general {
             grid-column: 7/-1;
             display: flex;
             gap: 20px;
+        }
+    }
+}
+
+@media desktop {
+    section.album-sideswipe {
+        .swipe-arrows {
+            display: none;
         }
     }
 }
